@@ -1,4 +1,6 @@
 from flask import Flask, request, jsonify
+from flask_jwt_extended import JWTManager, jwt_required
+from auth_app import auth_bp
 import requests
 import random
 
@@ -6,9 +8,14 @@ POKE_API_URL = "https://pokeapi.co/api/v2/"
 
 app = Flask(__name__)
 
+# Configuración secreta para JWT
+app.config['JWT_SECRET_KEY'] = 'Z4£t1#<oO"/Qa?4KUzDIIKvqi68wYS'
+jwt = JWTManager(app)
+app.register_blueprint(auth_bp, url_prefix="/auth") # Registrar el Blueprint de autenticación
+
 # Endpoint 1: Get pokemon type
 @app.route('/pokemon_types', methods=['POST'])
-
+@jwt_required()
 def get_pokemon_types():
     data_pokemon_name = request.get_json()
     pokemon_name = data_pokemon_name.get("pokemon_name", "null")
@@ -31,6 +38,7 @@ def get_pokemon_types():
 
 # Endpoint 2: Get random pokemon
 @app.route('/random_pokemon', methods=['POST'])
+@jwt_required()
 def get_pokemon_name():
     data_pokemon_type = request.get_json()
     pokemon_type = data_pokemon_type.get("pokemon_type", "null")
@@ -54,7 +62,7 @@ def get_pokemon_name():
 
 # Endpoint 3: Get longest pokemon name
 @app.route('/pokemon_max_name', methods=['POST'])
-
+@jwt_required()
 def get_pokemon_max_name():
     data_pokemon_type = request.get_json()
     pokemon_type = data_pokemon_type.get("pokemon_type", "null")
