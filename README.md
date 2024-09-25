@@ -1,6 +1,6 @@
 # Pokémon Flask API
 
-Esta es una API basada en Flask que utiliza autenticación JWT para proteger endpoints que interactúan con la [PokéAPI](https://pokeapi.co/). La API permite obtener tipos de un Pokémon, un Pokémon aleatorio según su tipo, y el nombre más largo de un Pokémon por tipo.
+Esta es una API basada en Flask que utiliza autenticación JWT para proteger endpoints que interactúan con la [PokéAPI](https://pokeapi.co/). La API permite obtener tipos de un Pokémon, un Pokémon aleatorio según su tipo y el nombre más largo de un Pokémon por tipo.
 
 ## Requisitos
 
@@ -20,17 +20,17 @@ Esta es una API basada en Flask que utiliza autenticación JWT para proteger end
 
 2. Crea un entorno virtual:
    ```bash
-   python -m venv venv
+   python -m venv poke_env
    ```
 
 3. Activa el entorno virtual:
    - En macOS/Linux:
      ```bash
-     source venv/bin/activate
+     source poke_env/bin/activate
      ```
    - En Windows:
      ```bash
-     venvScriptsactivate
+     poke_env/Scripts/activate
      ```
 
 4. Instala las dependencias:
