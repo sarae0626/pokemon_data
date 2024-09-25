@@ -1,4 +1,4 @@
-"# Pokémon Flask API
+# Pokémon Flask API
 
 Esta es una API basada en Flask que utiliza autenticación JWT para proteger endpoints que interactúan con la [PokéAPI](https://pokeapi.co/). La API permite obtener tipos de un Pokémon, un Pokémon aleatorio según su tipo, y el nombre más largo de un Pokémon por tipo.
 
@@ -30,7 +30,7 @@ Esta es una API basada en Flask que utiliza autenticación JWT para proteger end
      ```
    - En Windows:
      ```bash
-     venv\\Scripts\\activate
+     venvScriptsactivate
      ```
 
 4. Instala las dependencias:
@@ -58,14 +58,14 @@ Esta es una API basada en Flask que utiliza autenticación JWT para proteger end
   - **Request Body**:
     ```json
     {
-      \"username\": \"user123\",
-      \"password\": \"mypassword\"
+      "username": "user123",
+      "password": "mypassword"
     }
     ```
   - **Response**:
     ```json
     {
-      \"message\": \"Usuario user123 registrado correctamente\"
+      "message": "Usuario user123 registrado correctamente"
     }
     ```
 
@@ -75,14 +75,14 @@ Esta es una API basada en Flask que utiliza autenticación JWT para proteger end
   - **Request Body**:
     ```json
     {
-      \"username\": \"user123\",
-      \"password\": \"mypassword\"
+      "username": "user123",
+      "password": "mypassword"
     }
     ```
   - **Response**:
     ```json
     {
-      \"access_token\": \"<jwt_token>\"
+      "access_token": "<jwt_token>"
     }
     ```
 
@@ -96,13 +96,13 @@ Esta es una API basada en Flask que utiliza autenticación JWT para proteger end
   - **Request Body**:
     ```json
     {
-      \"pokemon_name\": \"pikachu\"
+      "pokemon_name": "pikachu"
     }
     ```
   - **Response**:
     ```json
     {
-      \"El pokemon pikachu es de tipo\": [\"electric\"]
+      "El pokemon pikachu es de tipo": ["electric"]
     }
     ```
 
@@ -114,13 +114,13 @@ Esta es una API basada en Flask que utiliza autenticación JWT para proteger end
   - **Request Body**:
     ```json
     {
-      \"pokemon_type\": \"fire\"
+      "pokemon_type": "fire"
     }
     ```
   - **Response**:
     ```json
     {
-      \"Un pokemon aleatorio de tipo fire es\": \"charmander\"
+      "Un pokemon aleatorio de tipo fire es": "charmander"
     }
     ```
 
@@ -132,13 +132,13 @@ Esta es una API basada en Flask que utiliza autenticación JWT para proteger end
   - **Request Body**:
     ```json
     {
-      \"pokemon_type\": \"grass\"
+      "pokemon_type": "grass"
     }
     ```
   - **Response**:
     ```json
     {
-      \"El pokemon con el nombre más largo de tipo grass es\": \"venusaur\"
+      "El pokemon con el nombre más largo de tipo grass es": "venusaur"
     }
     ```
 
