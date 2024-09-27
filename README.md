@@ -139,7 +139,7 @@ Esta es una API basada en Flask que utiliza autenticación JWT para proteger end
   - **Response**:
     ```json
     {
-      "El pokemon con el nombre más largo de tipo grass es": "venusaur"
+      "El pokemon con el nombre más largo de tipo grass es": "ogerpon-hearthflame-mask"
     }
     ```
 
