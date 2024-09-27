@@ -35,6 +35,7 @@ Esta es una API basada en Flask que utiliza autenticación JWT para proteger end
 
 4. Instala las dependencias:
    ```bash
+   pip install --upgrade pip
    pip install -r requirements.txt
    ```
 
