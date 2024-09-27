@@ -2,16 +2,16 @@ from flask import Blueprint, request, jsonify
 from flask_jwt_extended import create_access_token
 from flask_bcrypt import Bcrypt
 
-# Crear un Blueprint para auth
+# Crear un Blueprint de Flask para auth
 auth_bp = Blueprint('auth', __name__)
 bcrypt = Bcrypt()
 
-# Base de datos simple en memoria (por simplicidad)
+# Base de datos simple en memoria para los usuarios y contraseñas
 users = {}
 
-# Registro de usuarios (por simplicidad, no guarda en una base de datos real)
 @auth_bp.route('/register', methods=['POST'])
 def register():
+    """Endpoint para registrar un usuario en la app"""
     data = request.get_json()
     username = data.get('username', None)
     password = data.get('password', None)
@@ -28,9 +28,9 @@ def register():
 
     return jsonify({'message': f'Usuario {username} registrado correctamente'}), 201
 
-# Inicio de sesión
 @auth_bp.route('/login', methods=['POST'])
 def login():
+    """Endpoint para el login y la generación de token de autenticación"""
     data = request.get_json()
     username = data.get('username', None)
     password = data.get('password', None)
