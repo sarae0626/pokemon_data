@@ -1,6 +1,6 @@
 # Pokémon Flask API
 
-Esta es una API basada en Flask que utiliza autenticación JWT para proteger endpoints que interactúan con la [PokéAPI](https://pokeapi.co/). La API permite obtener tipos de un Pokémon, un Pokémon aleatorio según su tipo y el nombre más largo de un Pokémon por tipo.
+Esta es una API basada en Flask que utiliza JWT para proteger endpoints que interactúan con la [PokéAPI](https://pokeapi.co/). La API permite obtener tipos de un Pokémon, un Pokémon aleatorio según su tipo y el nombre más largo de un Pokémon por tipo.
 
 ## Requisitos
 
@@ -86,6 +86,9 @@ Esta es una API basada en Flask que utiliza autenticación JWT para proteger end
       "access_token": "<jwt_token>"
     }
     ```
+### Autorización
+
+- Luego de validar la identidad del usuario, el JWT devuelto por la aplicación autoriza al usuario a usar las siguientes funcionalidades.
 
 ### Funcionalidades Pokémon
 
@@ -145,7 +148,7 @@ Esta es una API basada en Flask que utiliza autenticación JWT para proteger end
 
 ## Seguridad
 
-- Todos los endpoints que interactúan con la PokéAPI están protegidos con autenticación JWT. Es necesario obtener un token de acceso mediante el endpoint `/auth/login` y proporcionarlo en los encabezados de la solicitud como `Authorization: Bearer <token>`.
+- Todos los endpoints que interactúan con la PokéAPI están protegidos con JWT. Es necesario obtener un token de acceso, luego de la validación de identidad que realiza el endpoint `/auth/login` y proporcionarlo en los encabezados de la solicitud como `Authorization: Bearer <token>`.
 
 ## Dependencias
 
