@@ -5,15 +5,12 @@ from settings.app_config import POKEAPI_BASE_URL, API_JWT_SECRET
 import requests
 import random
 
-
 app = Flask(__name__)
-
 
 # Configuración para la generación del JWT
 app.config['JWT_SECRET_KEY'] = API_JWT_SECRET
 jwt = JWTManager(app)
 app.register_blueprint(auth_bp, url_prefix="/auth") # Registrar el Blueprint de autenticación
-
 
 @app.route('/pokemon_types', methods=['POST'])
 @jwt_required()
